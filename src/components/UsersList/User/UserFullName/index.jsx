@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import styles from './UserFullName.module.css';
+import classNames from 'classnames/bind';
+
+const userClasses = classNames.bind(styles);
 
 class UserFullName extends Component {
   getFullName = () => {
@@ -7,7 +11,12 @@ class UserFullName extends Component {
   };
 
   render() {
-    return <div>{this.getFullName()}</div>;
+    const { className } = this.props;
+    return (
+      <div className={userClasses('userFullName', className)}>
+        {this.getFullName()}
+      </div>
+    );
   }
 }
 

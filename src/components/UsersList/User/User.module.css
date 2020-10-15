@@ -1,0 +1,22 @@
+.userContainer {
+  display: flex;
+  list-style: none;
+  padding: 10px 0;
+}
+
+.hover:hover {
+  background-color: #d3d3d3;
+}
+
+.selectedUser {
+  background-color: #419fd9;
+}
+
+.selectedUserPhoto {
+  border: 3px solid #794bc2;
+}
+
+.selectedUserTagline,
+.selectedUserFullName {
+  color: #ffffff;
+}
