@@ -1,7 +1,8 @@
 .userContainer {
   display: flex;
+  justify-content: space-between;
   list-style: none;
-  padding: 10px 0;
+  padding: 10px 50px 10px 20px;
 }
 
 .hover:hover {
@@ -19,4 +20,8 @@
 .selectedUserTagline,
 .selectedUserFullName {
   color: #ffffff;
+}
+
+.userInfo {
+  display: flex;
 }

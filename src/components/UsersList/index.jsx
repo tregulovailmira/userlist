@@ -32,7 +32,7 @@ const usersDB = [
     lastName: 'America',
     tagline: 'super soldier',
     imgSrc:
-      'https://lh3.googleusercontent.com/proxy/-ykXvAWSV2Azk73ywozg_kAho5PzLK7c_x2X1M1B0SQctkLVTOaGuymIi1LuRz6YnaATIG_vboRFFW69Uqhc5qXy0NTvlEMQquJRWq-PB7xroY27Rw7HDwdmPY-1NGnyZavovkbTz0Ib4E7YVrA',
+      'https://topspiski.com/wp-content/uploads/2018/02/72f8778216155481bd799c5120a894d9-700x438.jpg',
   },
 ];
 
@@ -44,11 +44,9 @@ class UserList extends Component {
     };
   }
 
-  filterUsers = (filteredUser) => {
+  filterUsers = (filteredUserID) => {
     this.setState({
-      usersList: this.state.usersList.filter(
-        (currentUser) => currentUser !== filteredUser
-      ),
+      usersList: this.state.usersList.filter(({ id }) => id !== filteredUserID),
     });
   };
 

@@ -1,0 +1,8 @@
+.deleteIcon {
+    color: #a9a9a9;
+    align-self: center;
+}
+
+.deleteIcon:hover {
+    color: #808080;
+}

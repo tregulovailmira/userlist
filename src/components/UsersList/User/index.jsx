@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserFullName from './UserFullName';
 import UserPhoto from './UserPhoto';
 import UserTagline from './UserTagline';
+import UserDeleteIcon from './UserDeleteButton';
 import styles from './User.module.css';
 import classNames from 'classnames/bind';
 
@@ -22,7 +23,7 @@ class User extends Component {
   };
 
   render() {
-    const { user } = this.props;
+    const { user, filteredUsers } = this.props;
     const { isSelected } = this.state;
     const className = userClasses('userContainer', {
       selectedUser: isSelected,
@@ -30,26 +31,29 @@ class User extends Component {
     });
     return (
       <li onClick={this.handleSelect} className={className}>
-        <UserPhoto
-          user={user}
-          className={userClasses({
-            selectedUserPhoto: isSelected,
-          })}
-        />
-        <div>
-          <UserFullName
+        <div className={userClasses('userInfo')}>
+          <UserPhoto
             user={user}
             className={userClasses({
-              selectedUserFullName: isSelected,
+              selectedUserPhoto: isSelected,
             })}
           />
-          <UserTagline
-            user={user}
-            className={userClasses({
-              selectedUserTagline: isSelected,
-            })}
-          />
+          <div>
+            <UserFullName
+              user={user}
+              className={userClasses({
+                selectedUserFullName: isSelected,
+              })}
+            />
+            <UserTagline
+              user={user}
+              className={userClasses({
+                selectedUserTagline: isSelected,
+              })}
+            />
+          </div>
         </div>
+        <UserDeleteIcon user={user} filteredUsers={filteredUsers} />
       </li>
     );
   }
